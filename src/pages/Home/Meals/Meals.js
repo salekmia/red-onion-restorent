@@ -26,7 +26,7 @@ const Meals = () => {
     
     return (
         <div className="container">
-            <div className="d-flex justify-content-center p-5">
+            <div className="d-flex justify-content-center pt-5 pb-3">
                 <button className="btn btn-outline-danger rounded-pill px-4 m-2" onClick={all}>All</button>
                 <button className="btn btn-outline-danger rounded-pill px-4 m-2" onClick={()=> filter('breakfast')}>breakfast</button>
                 <button className="btn btn-outline-danger rounded-pill px-4 m-2" onClick={()=> filter('dinner')}>Dinner</button>
@@ -36,6 +36,9 @@ const Meals = () => {
                 {
                     meals.map(meal => <Meal meal={meal} filter={filter} key={meal.id}></Meal>)
                 }
+            </div>
+            <div className="d-flex justify-content-center mb-5 mt-3">
+                <button className="btn btn-danger rounded-pill px-5 m-2">Checkout your food</button>
             </div>
         </div>
     );
