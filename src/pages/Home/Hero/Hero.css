@@ -1,0 +1,27 @@
+.hero {
+    background-image: url("../../../images/Image/bannerbackground.png");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.search-box {
+    height: 36px;
+    background: #fff;
+    width: 350px;
+}
+
+.search-box input {
+    border: none;
+}
+
+.search-box input:focus {
+    outline: none;
+}

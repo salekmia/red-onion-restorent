@@ -1,0 +1,12 @@
+.single-meal {
+    transition: all .25s ease-in-out;
+    transform: scale(0.95);
+}
+.single-meal:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.20);
+    overflow: hidden;
+    transform: scale(1);
+}
+.single-meal img {
+    overflow: hidden;
+}
