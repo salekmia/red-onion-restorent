@@ -22,7 +22,7 @@ const Header = () => {
                             <span style={{display: 'block', marginTop: '-10px', marginLeft: '5px'}}>0</span>
                         </span>
                         <Link to="/login"><Button className="btn text-white mx-2 rounded-pill">Login</Button></Link>
-                        <Link to="/signin"><Button className="px-4 btn text-white bg-danger rounded-pill">Sign in</Button></Link>
+                        <Link to="/signup"><Button className="px-4 btn text-white bg-danger rounded-pill">Sign up</Button></Link>
                     </div>
                     </Navbar.Collapse>
                 </div>

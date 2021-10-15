@@ -1,14 +1,16 @@
 import React from 'react';
 import Header from '../../../components/Header/Header';
-import './Login.css';
-const Login = () => {
+import './Signup.css';
+const Signup = () => {
     return (
         <div>
             <Header></Header>
             <div className="container d-flex justify-content-center align-items-center  py-4">
                 <div>
-                    <h3 className="text-center">Please login</h3>
+                    <h3 className="text-center">Signup here</h3>
                     <div className="border p-4">
+                        <input className="input-field" type="text" name="name" id="name" placeholder="Enter name" />
+                        <br />
                         <input className="input-field" type="email" name="email" id="email" placeholder="Enter email" />
                         <br />
                         <input className="input-field" type="password" name="password" id="password" placeholder="Enter password" />
@@ -21,8 +23,8 @@ const Login = () => {
                             <div className="or-line w-100"></div>
                         </div>
                         <div className="d-grid gap-2">
-                            <button className="btn btn-sm btn-danger"><i class="fab fa-google"></i> Login with google</button>
-                            <button className="btn btn-sm btn-danger"><i class="fab fa-facebook-f"></i> Login with facebook</button>
+                            <button className="btn btn-sm btn-danger"><i class="fab fa-google"></i> Sign up with google</button>
+                            <button className="btn btn-sm btn-danger"><i class="fab fa-facebook-f"></i> Sign up with facebook</button>
                         </div>
                         
                     </div>
@@ -32,4 +34,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;

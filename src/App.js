@@ -3,7 +3,7 @@ import './App.css';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login/Login';
 import NotFound from './pages/NotFound/NotFount/NotFound';
-import Signin from './pages/Signin/Signin/Signin';
+import Signup from './pages/Signup/Signup/Signup';
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/signin">
-            <Signin></Signin>
+          <Route path="/signup">
+            <Signup></Signup>
           </Route>
           <Route path="*">
             <NotFound></NotFound>
