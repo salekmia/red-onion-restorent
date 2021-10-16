@@ -1,13 +1,35 @@
 import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import Header from '../../../components/Header/Header';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 import './Signup.css';
 const Signup = () => {
-    const {signInUsignGoogle, signUpUsingPassword} = useFirebase()
+    const {signInUsignGoogle, signUpUsingPassword} = useAuth()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home'
+
+    const googleLoginHandle = () => {
+        signInUsignGoogle()
+        .then(result => {
+            history.push(redirect_uri)
+        })
+    }
+
+    const passwordSignUpHandle = () => {
+        signUpUsingPassword(email, password)
+        .then(result => {
+            history.push(redirect_uri)
+        })
+        .catch(error =>{
+            console.log(error.message)
+        }) 
+    }
 
     const emailChange = (e) => {
         setEmail(e.target.value)
@@ -31,7 +53,7 @@ const Signup = () => {
                         <br />
                         <input onBlur={passwordChange} className="input-field" type="password" name="password" id="password" placeholder="Enter password" />
                         <br />
-                        <input onClick={() => signUpUsingPassword(email, password)} className="my-2 btn btn-danger rounded-pill px-4" type="submit" value="Login" />
+                        <input onClick={passwordSignUpHandle} className="my-2 btn btn-danger rounded-pill px-4" type="submit" value="Sing up" />
 
                         <div className="d-flex align-items-center my-4">
                             <div className="or-line w-100"></div>
@@ -39,7 +61,7 @@ const Signup = () => {
                             <div className="or-line w-100"></div>
                         </div>
                         <div className="d-grid gap-2">
-                            <button onClick={signInUsignGoogle} className="btn btn-sm btn-danger"><i class="fab fa-google"></i> Sign up with google</button>
+                            <button onClick={googleLoginHandle} className="btn btn-sm btn-danger"><i class="fab fa-google"></i> Sign up with google</button>
                             <button className="btn btn-sm btn-danger"><i class="fab fa-facebook-f"></i> Sign up with facebook</button>
                         </div>
                         <p className="m-4">Already have an account? <Link to="/login">Login</Link></p>

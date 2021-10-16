@@ -10,11 +10,8 @@ const useFirebase = () => {
 
     const signInUsignGoogle = () => {
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-        .then(result => {
-            setUser(result.user)
-            console.log(user)
-        })
+        return signInWithPopup(auth, googleProvider);
+        
     }
 
     onAuthStateChanged(auth, (user) => {
@@ -26,24 +23,12 @@ const useFirebase = () => {
     })
 
     const signUpUsingPassword = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            setUser(result.user)
-            console.log(user.email)
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const signInUsingPassword = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            setUser(result.user)
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
+        return signInWithEmailAndPassword(auth, email, password)
+        
     }
 
     const logOut = () => {

@@ -2,11 +2,11 @@ import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png';
 
 const Header = () => {
-    const {user, logOut} = useFirebase()
+    const {user, logOut} = useAuth()
     return (
         <div>
             <Navbar bg="dark" expand="lg">

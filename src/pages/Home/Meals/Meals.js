@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Meal from '../Meal/Meal';
 
 const Meals = () => {
@@ -38,7 +39,7 @@ const Meals = () => {
                 }
             </div>
             <div className="d-flex justify-content-center mb-5 mt-3">
-                <button className="btn btn-danger rounded-pill px-5 m-2">Checkout your food</button>
+                <Link to="/checkout"><button className="btn btn-danger rounded-pill px-5 m-2">Checkout your food</button></Link>
             </div>
         </div>
     );
